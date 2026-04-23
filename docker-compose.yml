@@ -2,10 +2,9 @@ version: '3.9'
 
 services:
   bot:
+    build: .
     image: fluxnat/tempvoice:latest
     restart: unless-stopped
-    env_file:
-      - .env
     volumes:
       - ./data:/usr/src/app/data # This is CRITICAL for your SQLite database
     healthcheck:
